@@ -9,9 +9,12 @@ const app = express();
 
 // Middleware
 
+const cors = require("cors");
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://oroglee-dentist-23.vercel.app"],
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   }),
 );
