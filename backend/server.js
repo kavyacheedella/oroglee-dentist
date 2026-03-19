@@ -23,9 +23,7 @@ app.get("/api/health", (req, res) => {
 
 // Connect to MongoDB
 mongoose
-  .connect(
-    process.env.MONGODB_URI || "mongodb://localhost:27017/oroglee_dentist",
-  )
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("MongoDB connected successfully");
     const PORT = process.env.PORT || 5000;

@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 const getAuthHeader = () => {
   const token = localStorage.getItem("adminToken");
@@ -14,7 +14,12 @@ const handleResponse = async (res) => {
 };
 
 // Dentist APIs
-export const fetchDentists = async ({ search = "", location = "", page = 1, limit = 10 } = {}) => {
+export const fetchDentists = async ({
+  search = "",
+  location = "",
+  page = 1,
+  limit = 10,
+} = {}) => {
   const params = new URLSearchParams({ page, limit });
   if (search) params.append("search", search);
   if (location) params.append("location", location);
@@ -46,7 +51,11 @@ export const createAppointment = async (appointmentData) => {
   return handleResponse(res);
 };
 
-export const fetchAppointments = async ({ page = 1, limit = 10, status = "" } = {}) => {
+export const fetchAppointments = async ({
+  page = 1,
+  limit = 10,
+  status = "",
+} = {}) => {
   const params = new URLSearchParams({ page, limit });
   if (status) params.append("status", status);
   const res = await fetch(`${BASE_URL}/appointments?${params}`, {
