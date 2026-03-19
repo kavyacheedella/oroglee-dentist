@@ -7,6 +7,7 @@ import AdminLoginPage from "./pages/AdminLoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  console.log("ENV:", import.meta.env.VITE_API_URL);
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -30,7 +31,9 @@ function App() {
           {/* Footer */}
           <footer className="bg-white border-t border-teal-50 py-5 text-center">
             <p className="text-xs text-gray-400 font-body">
-              © {new Date().getFullYear()} <span className="text-teal-600 font-semibold">OroGlee</span> · Dental Appointment Booking Platform
+              © {new Date().getFullYear()}{" "}
+              <span className="text-teal-600 font-semibold">OroGlee</span> ·
+              Dental Appointment Booking Platform
             </p>
           </footer>
         </div>
