@@ -1,5 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
-
+const BASE_URL = "https://oroglee-dentist-1.onrender.com/api";
 const getAuthHeader = () => {
   const token = localStorage.getItem("adminToken");
   return token ? { Authorization: `Bearer ${token}` } : {};

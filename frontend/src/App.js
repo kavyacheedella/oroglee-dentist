@@ -7,7 +7,7 @@ import AdminLoginPage from "./pages/AdminLoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  console.log("ENV:", import.meta.env.VITE_API_URL);
+  console.log("ENV:", import.meta.env.REACT_APP_API_URL);
   return (
     <AuthProvider>
       <BrowserRouter>
